@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'A brand new library for Welcome views.'
   s.description      = 'Use this library to display new features, bug fixes and other stuff for your users like iOS native app.'
-  s.swift_versions   = ['5.1']
+  s.swift_version   =  '5.1'
 
   s.homepage         = 'https://github.com/leandroromn/WelcomeAboard'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
