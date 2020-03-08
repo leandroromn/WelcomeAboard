@@ -1,22 +1,20 @@
 public enum WAWelcomeViewContentTitleType {
-    case basic
-    case custom
+    case oneline
+    case multiline(welcomeText: String)
 
     var textAlignment: NSTextAlignment {
         switch self {
-        case .basic: return .left
-        case .custom: return .center
+        case .oneline: return .center
+        case .multiline: return .left
         }
     }
 }
 
 public struct WAWelcomeViewContentTitle {
-    let welcomeText: String
     let titleText: String
     let type: WAWelcomeViewContentTitleType
 
-    public init(welcomeText: String, titleText: String, type: WAWelcomeViewContentTitleType) {
-        self.welcomeText = welcomeText
+    public init(titleText: String, type: WAWelcomeViewContentTitleType) {
         self.titleText = titleText
         self.type = type
     }

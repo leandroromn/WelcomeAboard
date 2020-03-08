@@ -16,10 +16,14 @@ public class WAWelcomeView: UIView {
     private lazy var welcomeTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = viewContent.title.welcomeText
         label.textAlignment = viewContent.title.type.textAlignment
         label.font = .systemFont(ofSize: 32, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
+
+        if case let .multiline(welcomeText) = viewContent.title.type {
+            label.text = welcomeText
+        }
+
         return label
     }()
 
@@ -28,7 +32,7 @@ public class WAWelcomeView: UIView {
         label.text = viewContent.title.titleText
         label.textColor = .black
         label.numberOfLines = 0
-        label.textAlignment = .left
+        label.textAlignment = viewContent.title.type.textAlignment
         label.font = .systemFont(ofSize: 32, weight: .heavy)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,9 +58,10 @@ public class WAWelcomeView: UIView {
         return view
     }()
 
-    private var continueButton: WAPrimaryButton = {
+    private lazy var continueButton: WAPrimaryButton = {
         let button = WAPrimaryButton()
-        button.setTitle("Continue", for: .normal)
+        button.setTitle(viewContent.button.text, for: .normal)
+        button.backgroundColor = viewContent.button.backgroundColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -64,7 +69,6 @@ public class WAWelcomeView: UIView {
     private func setup() {
         setupViewsHierarchy()
         setupViewsContraints()
-        setupViewsContent()
         setupAdditionalSettings()
     }
 
@@ -109,22 +113,12 @@ public class WAWelcomeView: UIView {
         cardsListView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 
-    private func setupViewsContent() {
-        setup(title: viewContent.title)
-    }
-
-    private func setup(title: WAWelcomeViewContentTitle) {
-        if viewContent.title.type == .basic {
-            welcomeTitleLabel.text = viewContent.title.titleText
-            welcomeTitleLabel.textAlignment = .center
-        } else {
-            welcomeTitleLabel.text = viewContent.title.welcomeText
-            nameTitleLabel.text = viewContent.title.titleText
-        }
-    }
-
     private func setupAdditionalSettings() {
-        backgroundColor = .white
-        //continueButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        backgroundColor = viewContent.backgroundColor
+        continueButton.addTarget(self, action: #selector(didPressedButton), for: .touchUpInside)
+    }
+
+    @objc private func didPressedButton() {
+        viewContent.button.action?()
     }
 }

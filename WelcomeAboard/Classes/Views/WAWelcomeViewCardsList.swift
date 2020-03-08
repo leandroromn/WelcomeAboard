@@ -23,8 +23,10 @@ class WAWelcomeViewCardsList: UIView {
 
     private lazy var rows: [WAWelcomeViewCardsRow] = {
         return items.reduce([WAWelcomeViewCardsRow]()) { createdViews, item in
-            return createdViews + [WAWelcomeViewCardsRow(title: item.titleText,
-                                                         description: item.descriptionText,
+            return createdViews + [WAWelcomeViewCardsRow(titleText: item.titleText,
+                                                         titleFont: item.titleFont,
+                                                         descriptionText: item.descriptionText,
+                                                         descriptionFont: item.descriptionFont,
                                                          icon: item.icon)]
         }
     }()

@@ -13,9 +13,8 @@ class ViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        let title = WAWelcomeViewContentTitle(welcomeText: "Welcome To",
-                                       titleText: "Welcome to Home",
-                                       type: .custom)
+        let title = WAWelcomeViewContentTitle(titleText: "Welcome to Home", type: .oneline)
+//        let title = WAWelcomeViewContentTitle(titleText: "EasyMoving", type: .multiline(welcomeText: "Welcome to"))
 
         let item1 = WAWelcomeViewContentCard(titleText: "First Title",
                                              descriptionText: "First Description",
@@ -25,7 +24,11 @@ class ViewController: UIViewController {
                                              descriptionText: "Second Description",
                                              icon: UIImage(systemName: "option"))
 
-        let content = WAWelcomeViewContent(title: title, items: [item1, item2])
+        let button = WAWelcomeViewContentButton(text: "Prosseguir", backgroundColor: .orange, action: {
+            print("Hello World!")
+        })
+
+        let content = WAWelcomeViewContent(title: title, items: [item1, item2], button: button)
 
         view = WAWelcomeView(content: content)
     }

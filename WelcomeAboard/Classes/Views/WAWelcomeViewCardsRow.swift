@@ -1,40 +1,55 @@
 import UIKit
 
 class WAWelcomeViewCardsRow: UIView {
-    init(title: String, description: String, icon: UIImage?) {
+    private let titleText: String
+    private let titleFont: UIFont
+    private let descriptionText: String
+    private let descriptionFont: UIFont
+    private let icon: UIImage?
+
+    init(titleText: String,
+         titleFont: UIFont,
+         descriptionText: String,
+         descriptionFont: UIFont,
+         icon: UIImage?) {
+        self.titleText = titleText
+        self.titleFont = titleFont
+        self.descriptionText = descriptionText
+        self.descriptionFont = descriptionFont
+        self.icon = icon
+
         super.init(frame: .zero)
         setup()
-
-        titleLabel.text = title
-        descriptionLabel.text = description
-        iconImageView.image = icon
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private var iconImageView: UIImageView = {
+    private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = icon
         imageView.tintColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
-    private var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.text = titleText
         label.numberOfLines = 0
         label.textColor = .black
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = titleFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private var descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.text = descriptionText
         label.numberOfLines = 0
         label.textColor = .darkGray
-        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.font = descriptionFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
