@@ -1,46 +1,23 @@
-//
-//  ViewController.swift
-//  WelcomeAboard
-//
-//  Created by Leandro Romano on 03/03/2020.
-//  Copyright (c) 2020 Leandro Romano. All rights reserved.
-//
-
-import UIKit
 import WelcomeAboard
 
 class ViewController: UIViewController {
-
     override func loadView() {
         super.loadView()
-        let title = WAWelcomeViewContentTitle(titleText: "Welcome to Home", type: .oneline)
-//        let title = WAWelcomeViewContentTitle(titleText: "EasyMoving", type: .multiline(welcomeText: "Welcome to"))
 
-        let item1 = WAWelcomeViewContentCard(titleText: "First Title",
-                                             descriptionText: "First Description",
-                                             icon: UIImage(systemName: "command"))
-
-        let item2 = WAWelcomeViewContentCard(titleText: "Second Title",
-                                             descriptionText: "Second Description",
-                                             icon: UIImage(systemName: "option"))
-
-        let button = WAWelcomeViewContentButton(text: "Prosseguir", backgroundColor: .orange, action: {
-            print("Hello World!")
-        })
-
-        let content = WAWelcomeViewContent(title: title, items: [item1, item2], button: button)
-
+        let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
+        let item1 = WAContent.Card(title: "First Title",
+                                   resume: "First description",
+                                   icon: UIImage(systemName: "command"))
+        let item2 = WAContent.Card(title: "Second Title",
+                                   resume: "Second Description",
+                                   icon: UIImage(systemName: "option"))
+        let button = WAContent.Button(text: "Prosseguir") {
+            print("Hello World")
+        }
+        let content = WAContent.Base(backgroundColor: .white,
+                                     title: title,
+                                     cards: [item1, item2],
+                                     button: button)
         view = WAWelcomeView(content: content)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
-

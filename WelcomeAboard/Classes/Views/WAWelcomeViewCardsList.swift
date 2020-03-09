@@ -1,7 +1,7 @@
 import UIKit
 
 class WAWelcomeViewCardsList: UIView {
-    init(items: [WAWelcomeViewContentCard]) {
+    init(items: [WAContent.Card]) {
         self.items = items
         super.init(frame: .zero)
         setup()
@@ -11,7 +11,7 @@ class WAWelcomeViewCardsList: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var items: [WAWelcomeViewContentCard]
+    var items: [WAContent.Card]
 
     private var listStackView: UIStackView = {
         let stackView = UIStackView()
@@ -23,10 +23,10 @@ class WAWelcomeViewCardsList: UIView {
 
     private lazy var rows: [WAWelcomeViewCardsRow] = {
         return items.reduce([WAWelcomeViewCardsRow]()) { createdViews, item in
-            return createdViews + [WAWelcomeViewCardsRow(titleText: item.titleText,
+            return createdViews + [WAWelcomeViewCardsRow(titleText: item.title,
                                                          titleFont: item.titleFont,
-                                                         descriptionText: item.descriptionText,
-                                                         descriptionFont: item.descriptionFont,
+                                                         descriptionText: item.resume,
+                                                         descriptionFont: item.resumeFont,
                                                          icon: item.icon)]
         }
     }()

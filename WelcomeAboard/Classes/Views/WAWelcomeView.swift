@@ -1,7 +1,7 @@
 import UIKit
 
 public class WAWelcomeView: UIView {
-    public init(content: WAWelcomeViewContent) {
+    public init(content: WAContent.Base) {
         viewContent = content
         super.init(frame: .zero)
         setup()
@@ -11,16 +11,16 @@ public class WAWelcomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var viewContent: WAWelcomeViewContent
+    var viewContent: WAContent.Base
 
     private lazy var welcomeTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textAlignment = viewContent.title.type.textAlignment
+        label.textAlignment = viewContent.title.format.textAlignment
         label.font = .systemFont(ofSize: 32, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
 
-        if case let .multiline(welcomeText) = viewContent.title.type {
+        if case let .multiline(welcomeText) = viewContent.title.format {
             label.text = welcomeText
         }
 
@@ -29,10 +29,10 @@ public class WAWelcomeView: UIView {
 
     private lazy var nameTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = viewContent.title.titleText
+        label.text = viewContent.title.text
         label.textColor = .black
         label.numberOfLines = 0
-        label.textAlignment = viewContent.title.type.textAlignment
+        label.textAlignment = viewContent.title.format.textAlignment
         label.font = .systemFont(ofSize: 32, weight: .heavy)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -53,7 +53,7 @@ public class WAWelcomeView: UIView {
     }()
 
     private lazy var cardsListView: WAWelcomeViewCardsList = {
-        let view = WAWelcomeViewCardsList(items: viewContent.items)
+        let view = WAWelcomeViewCardsList(items: viewContent.cards)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
