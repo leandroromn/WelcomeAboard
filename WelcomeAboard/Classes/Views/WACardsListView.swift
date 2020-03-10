@@ -1,6 +1,6 @@
 import UIKit
 
-class WAWelcomeViewCardsList: UIView {
+class WACardsListView: UIView {
     init(items: [WAContent.Card]) {
         self.items = items
         super.init(frame: .zero)
@@ -21,9 +21,9 @@ class WAWelcomeViewCardsList: UIView {
         return stackView
     }()
 
-    private lazy var rows: [WAWelcomeViewCardsRow] = {
-        return items.reduce([WAWelcomeViewCardsRow]()) { createdViews, item in
-            return createdViews + [WAWelcomeViewCardsRow(titleText: item.title,
+    private lazy var cards: [WACardView] = {
+        return items.reduce([WACardView]()) { createdViews, item in
+            return createdViews + [WACardView(titleText: item.title,
                                                          titleFont: item.titleFont,
                                                          descriptionText: item.resume,
                                                          descriptionFont: item.resumeFont,
@@ -38,7 +38,7 @@ class WAWelcomeViewCardsList: UIView {
 
     private func setupViewsHierarchy() {
         addSubview(listStackView)
-        rows.forEach { listStackView.addArrangedSubview($0) }
+        cards.forEach { listStackView.addArrangedSubview($0) }
     }
 
     private func setupViewsContraints() {

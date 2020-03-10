@@ -1,6 +1,6 @@
 import UIKit
 
-class WAWelcomeViewCardsRow: UIView {
+class WACardView: UIView {
     private let titleText: String
     private let titleFont: UIFont
     private let descriptionText: String

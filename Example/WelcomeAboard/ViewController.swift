@@ -18,6 +18,6 @@ class ViewController: UIViewController {
                                      title: title,
                                      cards: [item1, item2],
                                      button: button)
-        view = WAWelcomeView(content: content)
+        view = WABaseView(content: content)
     }
 }

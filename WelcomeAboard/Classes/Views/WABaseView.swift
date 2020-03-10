@@ -1,6 +1,6 @@
 import UIKit
 
-public class WAWelcomeView: UIView {
+public class WABaseView: UIView {
     public init(content: WAContent.Base) {
         viewContent = content
         super.init(frame: .zero)
@@ -52,8 +52,8 @@ public class WAWelcomeView: UIView {
         return view
     }()
 
-    private lazy var cardsListView: WAWelcomeViewCardsList = {
-        let view = WAWelcomeViewCardsList(items: viewContent.cards)
+    private lazy var cardsListView: WACardsListView = {
+        let view = WACardsListView(items: viewContent.cards)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
