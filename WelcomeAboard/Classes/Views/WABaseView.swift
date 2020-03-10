@@ -1,5 +1,3 @@
-import UIKit
-
 public class WABaseView: UIView {
     public init(content: WAContent.Base) {
         viewContent = content

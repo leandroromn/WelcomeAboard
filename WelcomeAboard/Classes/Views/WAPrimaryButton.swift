@@ -1,5 +1,3 @@
-import UIKit
-
 class WAPrimaryButton: UIButton {
     init() {
         super.init(frame: .zero)

@@ -1,5 +1,3 @@
-import UIKit
-
 class WACardsListView: UIView {
     init(items: [WAContent.Card]) {
         self.items = items
