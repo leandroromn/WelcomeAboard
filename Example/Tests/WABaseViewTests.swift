@@ -5,7 +5,7 @@ import Nimble
 import Nimble_Snapshots
 import WelcomeAboard
 
-class TableOfContentsSpec: QuickSpec {
+class WABaseViewTests: QuickSpec {
     override func spec() {
         describe("#init") {
             var viewController: UIViewController!
@@ -26,7 +26,7 @@ class TableOfContentsSpec: QuickSpec {
                 let item2 = WAContent.Card(title: "Second Title",
                                            resume: "Second Description",
                                            icon: UIImage(systemName: "option"))
-                let button = WAContent.Button(text: "Prosseguir") {
+                let button = WAContent.Button(text: "Next") {
                     print("Hello World")
                 }
                 let content = WAContent.Base(backgroundColor: .white,
@@ -36,7 +36,7 @@ class TableOfContentsSpec: QuickSpec {
 
                 viewController.view = WABaseView(content: content)
 
-                expect(viewController.view).to(recordSnapshot())
+                expect(viewController.view).to(haveValidSnapshot())
             }
         }
     }
