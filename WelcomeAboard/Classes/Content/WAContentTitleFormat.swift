@@ -1,5 +1,5 @@
 public extension WAContent.Title {
-    enum Format {
+    enum Format: Equatable {
         case oneline
         case multiline(welcomeText: String)
 

@@ -1,9 +1,9 @@
 public extension WAContent {
     struct Base {
-        let backgroundColor: UIColor
-        let title: WAContent.Title
-        let cards: [WAContent.Card]
-        let button: WAContent.Button
+        public let backgroundColor: UIColor
+        public let title: WAContent.Title
+        public let cards: [WAContent.Card]
+        public let button: WAContent.Button
 
         public init(backgroundColor: UIColor,
                     title: WAContent.Title,

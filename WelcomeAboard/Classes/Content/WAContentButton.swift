@@ -1,12 +1,12 @@
 public extension WAContent {
     struct Button {
-        let text: String
-        let backgroundColor: UIColor
-        let action: (() -> Void)?
+        public let text: String
+        public let backgroundColor: UIColor
+        public let action: (() -> Void)?
 
         public init(text: String,
                     backgroundColor: UIColor = .lightGray,
-                    action: (() -> Void)?) {
+                    action: (() -> Void)? = nil) {
             self.text = text
             self.backgroundColor = backgroundColor
             self.action = action

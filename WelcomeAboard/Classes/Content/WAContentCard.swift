@@ -1,10 +1,10 @@
 public extension WAContent {
     struct Card {
-        let title: String
-        let titleFont: UIFont
-        let resume: String
-        let resumeFont: UIFont
-        let icon: UIImage?
+        public let title: String
+        public let titleFont: UIFont
+        public let resume: String
+        public let resumeFont: UIFont
+        public let icon: UIImage?
 
         public init(title: String,
                     titleFont: UIFont = .systemFont(ofSize: 14, weight: .semibold),
