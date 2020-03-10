@@ -29,10 +29,11 @@ public class WABaseView: UIView {
         let label = UILabel()
         label.text = viewContent.title.text
         label.textColor = .black
-        label.numberOfLines = 0
         label.textAlignment = viewContent.title.format.textAlignment
         label.font = .systemFont(ofSize: 32, weight: .heavy)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
         return label
     }()
 
