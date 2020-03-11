@@ -23,7 +23,7 @@ This project was built to use with CocoaPods in your application. To install **W
 ```ruby
 pod 'WelcomeAboard'
 ```
-After added the line to your Podfile, run the command in terminal:
+Then, run the command on terminal:
 ```bash
 $ pod install
 ```
@@ -33,30 +33,76 @@ Congratulations! **WelcomeAboard** has been successfully installed on your proje
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the pod.
 Then, create the required models to fill up the WABaseView and sub-components.
 ```swift
-override func loadView() {
-    super.loadView()
+import WelcomeAboard // UIKit import is no longer required because WelcomeAboard import UIKit internally.
 
-    let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
+class ViewController: UIViewController {
+    override func loadView() {
+        super.loadView()
+        let content = createWAContent()
+        view = WABaseView(content: content)
+    }
 
-    let items = [
-        WAContent.Card(title: "First Title",
-                        resume: "First description",
-                        icon: UIImage(systemName: "command")),
-        WAContent.Card(title: "Second Title",
-                        resume: "Second Description",
-                        icon: UIImage(systemName: "option")),
-        WAContent.Card(title: "Third Title",
-                        resume: "Third Description",
-                        icon: UIImage(systemName: "control"))
-    ]
+    private func createWAContent() -> WAContent.Base {
+        let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
 
-    let button = WAContent.Button(text: "Continue")
+        let items = [
+            WAContent.Card(title: "First Title",
+                           resume: "First description",
+                           icon: UIImage(systemName: "command")),
+            WAContent.Card(title: "Second Title",
+                           resume: "Second Description",
+                           icon: UIImage(systemName: "option")),
+            WAContent.Card(title: "Third Title",
+                           resume: "Third Description",
+                           icon: UIImage(systemName: "control"))
+        ]
 
-    let content = WAContent.Base(backgroundColor: .white,
-                                    title: title,
-                                    cards: items,
-                                    button: button)
+        let button = WAContent.Button(text: "Continue")
 
-    view = WABaseView(content: content)
+        return WAContent.Base(backgroundColor: .white,
+                              title: title,
+                              cards: items,
+                              button: button)
+    }
 }
 ```
+In this example, `WABaseView` was created inside `loadView` method, but this is not required. You can create the `WABaseView` whereaver you want.
+
+### WAContent.Base
+Name | Type
+------------ | -------------
+*backgroundColor* | `UIColor`
+*title* | `WAContent.Title`
+*cards* | `[WAContent.Card]`
+*button* | `WAContent.Button`
+
+### WAContent.Title
+Name | Type
+------------ | -------------
+*format* | `WAContent.Title.Format`
+*text* | `String`
+
+### WAContent.Title.Format
+- `.oneline`
+- `.multiline`
+    - `welcomeText: String`
+
+Name | Type
+------------ | -------------
+*textAlignment* | `NSTextAlignment`
+
+### WAContent.Card
+Name | Type
+------------ | -------------
+*title* | `String`
+*titleFont* | `UIFont`
+*resume* | `String`
+*resumeFont* | `UIFont`
+*icon* | `UIImage?`
+
+### WAContent.Button
+Name | Type
+------------ | -------------
+*text* | `String`
+*backgroundColor* | `UIColor`
+*action* | `(() -> Void)?`

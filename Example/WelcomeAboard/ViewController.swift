@@ -3,7 +3,11 @@ import WelcomeAboard
 class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
+        let content = createWAContent()
+        view = WABaseView(content: content)
+    }
 
+    private func createWAContent() -> WAContent.Base {
         let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
 
         let items = [
@@ -20,11 +24,9 @@ class ViewController: UIViewController {
 
         let button = WAContent.Button(text: "Continue")
 
-        let content = WAContent.Base(backgroundColor: .white,
-                                     title: title,
-                                     cards: items,
-                                     button: button)
-        
-        view = WABaseView(content: content)
+        return WAContent.Base(backgroundColor: .white,
+                              title: title,
+                              cards: items,
+                              button: button)
     }
 }
