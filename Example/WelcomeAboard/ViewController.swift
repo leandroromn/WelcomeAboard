@@ -5,19 +5,26 @@ class ViewController: UIViewController {
         super.loadView()
 
         let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
-        let item1 = WAContent.Card(title: "First Title",
-                                   resume: "First description",
-                                   icon: UIImage(systemName: "command"))
-        let item2 = WAContent.Card(title: "Second Title",
-                                   resume: "Second Description",
-                                   icon: UIImage(systemName: "option"))
-        let button = WAContent.Button(text: "Prosseguir") {
-            print("Hello World")
-        }
+
+        let items = [
+            WAContent.Card(title: "First Title",
+                           resume: "First description",
+                           icon: UIImage(systemName: "command")),
+            WAContent.Card(title: "Second Title",
+                           resume: "Second Description",
+                           icon: UIImage(systemName: "option")),
+            WAContent.Card(title: "Third Title",
+                           resume: "Third Description",
+                           icon: UIImage(systemName: "control"))
+        ]
+
+        let button = WAContent.Button(text: "Continue")
+
         let content = WAContent.Base(backgroundColor: .white,
                                      title: title,
-                                     cards: [item1, item2],
+                                     cards: items,
                                      button: button)
+        
         view = WABaseView(content: content)
     }
 }
