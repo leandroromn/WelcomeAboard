@@ -5,17 +5,20 @@ public extension WAContent {
         public let resume: String
         public let resumeFont: UIFont
         public let icon: UIImage?
+        public let iconTintColor: UIColor?
 
         public init(title: String,
                     titleFont: UIFont = .systemFont(ofSize: 14, weight: .semibold),
                     resume: String,
                     resumeFont: UIFont = .systemFont(ofSize: 14, weight: .regular),
-                    icon: UIImage?) {
+                    icon: UIImage?,
+                    iconTintColor: UIColor = .black) {
             self.title = title
             self.titleFont = titleFont
             self.resume = resume
             self.resumeFont = resumeFont
             self.icon = icon
+            self.iconTintColor = iconTintColor
         }
     }
 }

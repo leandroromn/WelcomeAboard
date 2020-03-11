@@ -4,17 +4,20 @@ class WACardView: UIView {
     private let descriptionText: String
     private let descriptionFont: UIFont
     private let icon: UIImage?
+    private let iconTintColor: UIColor?
 
     init(titleText: String,
          titleFont: UIFont,
          descriptionText: String,
          descriptionFont: UIFont,
-         icon: UIImage?) {
+         icon: UIImage?,
+         iconTintColor: UIColor?) {
         self.titleText = titleText
         self.titleFont = titleFont
         self.descriptionText = descriptionText
         self.descriptionFont = descriptionFont
         self.icon = icon
+        self.iconTintColor = iconTintColor
 
         super.init(frame: .zero)
         setup()
@@ -27,7 +30,7 @@ class WACardView: UIView {
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = icon
-        imageView.tintColor = .black
+        imageView.tintColor = iconTintColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

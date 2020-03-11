@@ -25,7 +25,8 @@ class WACardsListView: UIView {
                                                          titleFont: item.titleFont,
                                                          descriptionText: item.resume,
                                                          descriptionFont: item.resumeFont,
-                                                         icon: item.icon)]
+                                                         icon: item.icon,
+                                                         iconTintColor: item.iconTintColor)]
         }
     }()
 
