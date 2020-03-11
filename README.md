@@ -68,6 +68,11 @@ class ViewController: UIViewController {
 ```
 In this example, `WABaseView` was created inside `loadView` method, but this is not required. You can create the `WABaseView` whereaver you want.
 
+## Real example
+In this following example, we will recreate the welcome view from Home app.
+
+## Content models
+
 ### WAContent.Base
 Name | Type
 ------------ | -------------
