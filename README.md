@@ -124,7 +124,7 @@ Name | Type | Required
 ### WAContent.Button
 The model responsible for the `WAPrimaryButton` button.
 The property `action` is not required. Remember to use `weak self` to avoid retain-cycles.
-<br/>
+
 Name | Type | Required
 ------------ | ------------- | -------------
 *text* | `String`  | ✅
