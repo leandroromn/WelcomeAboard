@@ -30,10 +30,10 @@ $ pod install
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
 ## How to use
-First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.
+First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
 
-In this example, we'll recreate the welcome view from the **Home** app.
+In this example, we'll recreate the welcome view from the **Home** app.<br/>
 *Please, extract your strings to a constant file or similar.* 😝
 <p align="center">
     <img src="repository-images/real-example.png" alt="Real Example" />
