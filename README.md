@@ -33,11 +33,12 @@ Congratulations! **WelcomeAboard** has been successfully installed on your proje
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
 
-In this example, we'll recreate the welcome view from the **Home** app.<br/>
-*Please, extract your strings to a constant file or similar.* 😝
+In this example, we'll recreate the welcome view from the **Home** app:<br/>
 <p align="center">
     <img src="repository-images/real-example.png" alt="Real Example" />
 </p>
+
+> *Please, extract your strings to a constant file or similar.* 😝
 
 You can copy the following code and paste in your project to get the same result above:
 ```swift
