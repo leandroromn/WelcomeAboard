@@ -150,4 +150,4 @@ Feel free to send suggestions or even a pull request.
 
 If you make changes with visual effects, remember to run/update the snapshot tests.
 
-Have fun using **WelcomeAboard** 🛳
+Have fun using **WelcomeAboard** ⛵️
