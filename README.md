@@ -84,6 +84,7 @@ In this example, `WABaseView` was created inside `loadView` method, but this is 
 
 ### WAContent.Base
 A container for other models to build `WABaseView`.
+
 Name | Type | Required
 ------------ | ------------- | -------------
 *backgroundColor* | `UIColor`  | ✅
@@ -93,6 +94,7 @@ Name | Type | Required
 
 ### WAContent.Title
 The model responsible for the title view.
+
 Name | Type | Required
 ------------ | ------------- | -------------
 *format* | `WAContent.Title.Format` | ✅
@@ -112,6 +114,7 @@ Name | Type | Required
 ### WAContent.Card
 The model responsible for the `WACardView` view.
 The property `iconTintColor` is not required. The default value is `.black`.
+
 Name | Type | Required
 ------------ | ------------- | -------------
 *title* | `String` | ✅
