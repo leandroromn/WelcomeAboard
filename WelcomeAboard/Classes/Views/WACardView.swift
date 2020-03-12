@@ -31,6 +31,7 @@ class WACardView: UIView {
         let imageView = UIImageView()
         imageView.image = icon
         imageView.tintColor = iconTintColor
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -49,7 +50,7 @@ class WACardView: UIView {
         let label = UILabel()
         label.text = descriptionText
         label.numberOfLines = 0
-        label.textColor = .darkGray
+        label.textColor = .gray
         label.font = descriptionFont
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

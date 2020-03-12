@@ -8,21 +8,27 @@ class ViewController: UIViewController {
     }
 
     private func createWAContent() -> WAContent.Base {
-        let title = WAContent.Title(format: .oneline, text: "Welcome to Home")
+        let title = WAContent.Title(format: .oneline,
+                                    text: "Welcome to Home")
 
         let items = [
-            WAContent.Card(title: "First Title",
-                           resume: "First description",
-                           icon: UIImage(systemName: "command")),
-            WAContent.Card(title: "Second Title",
-                           resume: "Second Description",
-                           icon: UIImage(systemName: "option")),
-            WAContent.Card(title: "Third Title",
-                           resume: "Third Description",
-                           icon: UIImage(systemName: "control"))
+            WAContent.Card(title: "Control Your Home",
+                           resume: "Securely control and monitor your home using the Home app, Control Center, Siri and Apple Watch.",
+                           icon: UIImage(systemName: "house.fill"),
+                           iconTintColor: .orange),
+            WAContent.Card(title: "Set It and Forget It",
+                           resume: "Automate common behaviors, settings, and scenes so everything is ready and waiting for you.",
+                           icon: UIImage(systemName: "clock.fill"),
+                           iconTintColor: .orange),
+            WAContent.Card(title: "Share Access",
+                           resume: "Allow friends, family, and folks you trust to access your home, whenever and however you want.",
+                           icon: UIImage(systemName: "person.crop.circle.fill.badge.checkmark"),
+                           iconTintColor: .orange)
         ]
 
-        let button = WAContent.Button(text: "Continue")
+        let button = WAContent.Button(text: "Continue", backgroundColor: .orange) { [weak self] in
+            self?.dismiss(animated: true)
+        }
 
         return WAContent.Base(backgroundColor: .white,
                               title: title,

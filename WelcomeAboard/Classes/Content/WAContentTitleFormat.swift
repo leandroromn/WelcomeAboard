@@ -9,5 +9,12 @@ public extension WAContent.Title {
             case .multiline: return .left
             }
         }
+
+        var font: UIFont {
+            switch self {
+            case .oneline: return .systemFont(ofSize: 32, weight: .bold)
+            case .multiline: return .systemFont(ofSize: 32, weight: .heavy)
+            }
+        }
     }
 }

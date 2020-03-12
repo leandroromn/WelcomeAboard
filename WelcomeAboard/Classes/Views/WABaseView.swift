@@ -30,7 +30,7 @@ public class WABaseView: UIView {
         label.text = viewContent.title.text
         label.textColor = .black
         label.textAlignment = viewContent.title.format.textAlignment
-        label.font = .systemFont(ofSize: 32, weight: .heavy)
+        label.font = viewContent.title.format.font
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2

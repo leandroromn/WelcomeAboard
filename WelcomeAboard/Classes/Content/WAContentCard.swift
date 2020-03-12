@@ -10,7 +10,7 @@ public extension WAContent {
         public init(title: String,
                     titleFont: UIFont = .systemFont(ofSize: 14, weight: .semibold),
                     resume: String,
-                    resumeFont: UIFont = .systemFont(ofSize: 14, weight: .regular),
+                    resumeFont: UIFont = .systemFont(ofSize: 13, weight: .regular),
                     icon: UIImage?,
                     iconTintColor: UIColor = .black) {
             self.title = title

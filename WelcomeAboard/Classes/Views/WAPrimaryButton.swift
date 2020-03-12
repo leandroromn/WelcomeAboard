@@ -16,8 +16,8 @@ class WAPrimaryButton: UIButton {
 
     private func setup() {
         setTitleColor(.white, for: .normal)
-        contentEdgeInsets = UIEdgeInsets(top: 16, left: 8, bottom: 16, right: 8)
+        contentEdgeInsets = UIEdgeInsets(top: 15, left: 8, bottom: 15, right: 8)
         titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
-        layer.cornerRadius = 8
+        layer.cornerRadius = 14
     }
 }
