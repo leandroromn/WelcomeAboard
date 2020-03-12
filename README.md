@@ -13,27 +13,27 @@
     </a>
 </p>
 
-Welcome to **WelcomeAboard**, a small pod to receive new users with a classic iOS style visual.
+Welcome to **WelcomeAboard**, a quick library to show the main features of your application.
 
-This repository was created to facilitate the creation of a welcome screen based on iOS views for native apps. Fully customizable and smaller.
+This repository was created to facilitate the creation of a welcome screen similar to native Apple applications.
 
 ## Installation
 ### CocoaPods
-This project was built to use with CocoaPods in your application. To install **WelcomeAboard** on your iOS project, add the following line to your `Podfile`:
+To install **WelcomeAboard** on your iOS project, add the following line to your `Podfile`:
 ```ruby
 pod 'WelcomeAboard'
 ```
-Then, run the command on terminal:
+Then, run the command on the terminal:
 ```bash
 $ pod install
 ```
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
 ## How to use
-First, add `import WelcomeAboard` line on top of your ViewController's code to import the pod.
-Then, create the required models to fill up the `WABaseView` and sub-components.
+First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.
+Then, create the required models to fill the `WABaseView` and sub-components.
 
-In this following example, we will re-create the welcome view from the **Home** app.
+In this example, we'll recreate the welcome view from the **Home** app.
 *Please, extract your strings to a constant file or similar.* 😝
 <p align="center">
     <img src="repository-images/real-example.png" alt="Real Example" />
@@ -126,7 +126,7 @@ Name | Type | Required
 
 ### WAContent.Button
 The model responsible for the `WAPrimaryButton` button.
-The property `action` is not required. Remember to use `weak self` to avoid retain-cycles.
+The property `action` is not required. Remember to use `weak self` to avoid retain cycles.
 
 Name | Type | Required
 ------------ | ------------- | -------------
