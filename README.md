@@ -109,7 +109,7 @@ You can choose between `.oneline` to get same result of the example or select th
 
 Name | Type | Required
 ------------ | ------------- | -------------
-*textAlignment* | `NSTextAlignment` | ✅
+*textAlignment* | `NSTextAlignment` | 🟨
 
 ### WAContent.Card
 The model responsible for the `WACardView` view.
@@ -138,3 +138,16 @@ let button = WAContent.Button(text: "Continue", backgroundColor: .orange) { [wea
     self?.dismiss(animated: true)
 }
 ```
+
+## Credits
+WelcomeAboard was originally written by [Leandro Romano](https://www.linkedin.com/in/leandroromn/) with a simple goal of accelerating development with a welcome preview that become standard in Apple's native apps.
+
+The Welcome view layout was created by [Apple](http://apple.com/).
+
+## Contributions and support
+Feel free to send suggestions or even a Pull Request. 
+If the change makes sense, it will certainly be part of the project. 😁 
+
+If you make changes with visual effects, remember to run/update the snapshot tests.
+
+Have fun using **WelcomeAboard** 🛳
