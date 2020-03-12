@@ -145,8 +145,7 @@ WelcomeAboard was originally written by [Leandro Romano](https://www.linkedin.co
 The Welcome view layout was created by [Apple](http://apple.com/).
 
 ## Contributions and support
-Feel free to send suggestions or even a Pull Request. 
-If the change makes sense, it will certainly be part of the project. 😁 
+Feel free to send suggestions or even a pull request. 
 
 If you make changes with visual effects, remember to run/update the snapshot tests.
 
