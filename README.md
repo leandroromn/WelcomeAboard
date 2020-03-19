@@ -38,7 +38,7 @@ In this example, we'll recreate the welcome view from the **Home** app:<br/>
     <img src="repository-images/real-example.png" alt="Real Example" />
 </p>
 
-> *Please, extract your strings to a constant file or similar.* 😝
+> *Please, extract your strings to a separate file.* 😝
 
 You can copy the following code and paste in your project to get the same result above:
 ```swift
