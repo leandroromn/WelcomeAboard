@@ -1,10 +1,19 @@
 import WelcomeAboard
 
 class ViewController: UIViewController {
-    override func loadView() {
-        super.loadView()
-        let content = createWAContent()
-        view = WABaseView(content: content)
+//    override func loadView() {
+//        super.loadView()
+//        let content = createWAContent()
+//        view = WABaseView(content: content)
+//    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let welcomeVC = UIViewController()
+        welcomeVC.view = WABaseView(content: createWAContent())
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.present(welcomeVC, animated: true)
+        }
     }
 
     private func createWAContent() -> WAContent.Base {
