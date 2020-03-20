@@ -24,6 +24,8 @@ Welcome to **WelcomeAboard**, a quick library to show the main features of your 
 
 This repository was created to facilitate the creation of a welcome screen similar to native Apple applications.
 
+<br/>
+
 ## Installation
 ### CocoaPods
 To install **WelcomeAboard** on your iOS project, add the following line to your `Podfile`:
@@ -38,12 +40,12 @@ $ pod install
 <br/>
 
 Congratulations! 🥳<br/>
-**WelcomeAboard** has been successfully installed on your project. 😄
+**WelcomeAboard** has been successfully installed on your project.
 
 <br/>
 
 ## How to use
-First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
+First, import `WelcomeAboard` into your *UIViewController* class.
 Then, create the required models to fill the `WABaseView` and sub-components.
 
 ```swift
@@ -88,7 +90,7 @@ class ViewController: UIViewController {
 }
 ```
 
-> *Please, extract your strings to a separate file.* 😄
+> ⚠️ *Please, extract your strings to a separate file.*
 
 In this example, `WABaseView` was created inside `loadView` method, but this is not required. You can create the `WABaseView` whereaver you want.
 
