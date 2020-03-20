@@ -43,7 +43,7 @@ Congratulations! 🥳<br/>
 <br/>
 
 ## How to use
-First, import `WelcomeAboard` into your *UIViewController* class.
+First, import `WelcomeAboard` into your *UIViewController* class.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
 
 ```swift
