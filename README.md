@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="repository-images/welcome-aboard.png" width="600" alt="RKit" />
+    <img src="repository-images/welcomeaboard-logo.png" width="520" alt="RKit" />
 </p>
 
 <p align="center">
