@@ -37,7 +37,8 @@ $ pod install
 
 <br/>
 
-Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
+Congratulations! 🥳<br/>
+**WelcomeAboard** has been successfully installed on your project. 😄
 
 <br/>
 
