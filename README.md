@@ -13,7 +13,7 @@
     </a>
 </p>
 
-<br/><br/>
+<br/>
 
 <p align="right">
 <img src="repository-images/welcomeaboard-example.png" align="right"
@@ -23,6 +23,8 @@
 Welcome to **WelcomeAboard**, a quick library to show the main features of your application.
 
 This repository was created to facilitate the creation of a welcome screen similar to native Apple applications.
+
+<br/>
 
 ## Installation
 ### CocoaPods
@@ -36,14 +38,14 @@ $ pod install
 ```
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
-<br/><br/>
+<br/>
 
 ## How to use
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
 
 ```swift
-import WelcomeAboard // UIKit import is no longer required because WelcomeAboard import UIKit internally.
+import WelcomeAboard
 
 class ViewController: UIViewController {
     override func loadView() {
@@ -53,25 +55,28 @@ class ViewController: UIViewController {
     }
 
     private func createWAContent() -> WAContent.Base {
-        let title = WAContent.Title(format: .oneline,
-                                    text: "Welcome to Home")
+        let color = UIColor(red:0.90, green:0.22, blue:0.31, alpha:1.00)
+        let title = WAContent.Title(format: .multiline(welcomeText: "Welcome to"),
+                                    text: "WelcomeAboard")
 
         let items = [
-            WAContent.Card(title: "Control Your Home",
-                           resume: "Securely control and monitor your home using the Home app, Control Center, Siri and Apple Watch.",
-                           icon: UIImage(systemName: "house.fill"),
-                           iconTintColor: .orange),
-            WAContent.Card(title: "Set It and Forget It",
-                           resume: "Automate common behaviors, settings, and scenes so everything is ready and waiting for you.",
-                           icon: UIImage(systemName: "clock.fill"),
-                           iconTintColor: .orange),
-            WAContent.Card(title: "Share Access",
-                           resume: "Allow friends, family, and folks you trust to access your home, whenever and however you want.",
-                           icon: UIImage(systemName: "person.crop.circle.fill.badge.checkmark"),
-                           iconTintColor: .orange)
+            WAContent.Card(title: "Receive New Users",
+                           resume: "Tell us about your application, explain the main features and what else you want to tell!",
+                           icon: UIImage(systemName: "person.2.square.stack.fill"),
+                           iconTintColor: color),
+            WAContent.Card(title: "Highlight Features",
+                           resume: "I'm sure your application contains incredible features. Use this space to give more visibility.",
+                           icon: UIImage(systemName: "text.bubble.fill"),
+                           iconTintColor: color),
+            WAContent.Card(title: "Notify Bugfixes",
+                           resume: "Nobody likes to receive a bug report. Informing that annoying problem has been fixed is much more nicer.",
+                           icon: UIImage(systemName: "hammer.fill"),
+                           iconTintColor: color)
         ]
 
-        let button = WAContent.Button(text: "Continue", backgroundColor: .orange)
+        let button = WAContent.Button(text: "Continue", backgroundColor: color) { [weak self] in
+            self?.dismiss(animated: true)
+        }
 
         return WAContent.Base(backgroundColor: .white,
                               title: title,
@@ -81,7 +86,7 @@ class ViewController: UIViewController {
 }
 ```
 
-> *Please, extract your strings to a separate file.* 😝
+> *Please, extract your strings to a separate file.* 😄
 
 In this example, `WABaseView` was created inside `loadView` method, but this is not required. You can create the `WABaseView` whereaver you want.
 
@@ -155,14 +160,3 @@ Feel free to send suggestions or even a pull request.
 If you make changes with visual effects, remember to run/update the snapshot tests.
 
 Have fun using **WelcomeAboard** ⛵️
-
-<br><br><br><br><br><br><br>
-
-
-## Getting Started
-
-
-
-### Motivation 
-
-After several problems in ensuring the alignment and baselines established in the project requirement. This tool was developed, together with the design/ux team, to facilitate and ensure that visual elements follow the established baselines.

@@ -8,7 +8,7 @@ class ViewController: UIViewController {
     }
 
     private func createWAContent() -> WAContent.Base {
-        let color = UIColor(red:0.90, green:0.22, blue:0.31, alpha:1.00);
+        let color = UIColor(red:0.90, green:0.22, blue:0.31, alpha:1.00)
         let title = WAContent.Title(format: .multiline(welcomeText: "Welcome to"),
                                     text: "WelcomeAboard")
 
