@@ -33,14 +33,11 @@ Congratulations! **WelcomeAboard** has been successfully installed on your proje
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
 
-In this example, we'll recreate the welcome view from the **Home** app:<br/>
-<p align="center">
-    <img src="repository-images/real-example.png" alt="Real Example" />
+<p align="right">
+<img src="repository-images/welcomeaboard-example.png" align="right"
+     title="Example" width="300">
 </p>
 
-> *Please, extract your strings to a separate file.* 😝
-
-You can copy the following code and paste in your project to get the same result above:
 ```swift
 import WelcomeAboard // UIKit import is no longer required because WelcomeAboard import UIKit internally.
 
@@ -79,6 +76,9 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+> *Please, extract your strings to a separate file.* 😝
+
 In this example, `WABaseView` was created inside `loadView` method, but this is not required. You can create the `WABaseView` whereaver you want.
 
 ## Content models
@@ -151,3 +151,14 @@ Feel free to send suggestions or even a pull request.
 If you make changes with visual effects, remember to run/update the snapshot tests.
 
 Have fun using **WelcomeAboard** ⛵️
+
+<br><br><br><br><br><br><br>
+
+
+## Getting Started
+
+
+
+### Motivation 
+
+After several problems in ensuring the alignment and baselines established in the project requirement. This tool was developed, together with the design/ux team, to facilitate and ensure that visual elements follow the established baselines.
