@@ -24,8 +24,6 @@ Welcome to **WelcomeAboard**, a quick library to show the main features of your 
 
 This repository was created to facilitate the creation of a welcome screen similar to native Apple applications.
 
-<br/>
-
 ## Installation
 ### CocoaPods
 To install **WelcomeAboard** on your iOS project, add the following line to your `Podfile`:
@@ -36,6 +34,9 @@ Then, run the command on the terminal:
 ```bash
 $ pod install
 ```
+
+<br/>
+
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
 <br/>
