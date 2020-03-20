@@ -13,6 +13,13 @@
     </a>
 </p>
 
+<br/><br/>
+
+<p align="right">
+<img src="repository-images/welcomeaboard-example.png" align="right"
+     title="Example" width="300">
+</p>
+
 Welcome to **WelcomeAboard**, a quick library to show the main features of your application.
 
 This repository was created to facilitate the creation of a welcome screen similar to native Apple applications.
@@ -29,14 +36,11 @@ $ pod install
 ```
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
+<br/><br/><br/>
+
 ## How to use
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
 Then, create the required models to fill the `WABaseView` and sub-components.
-
-<p align="right">
-<img src="repository-images/welcomeaboard-example.png" align="right"
-     title="Example" width="300">
-</p>
 
 ```swift
 import WelcomeAboard // UIKit import is no longer required because WelcomeAboard import UIKit internally.
