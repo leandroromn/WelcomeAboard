@@ -36,7 +36,7 @@ $ pod install
 ```
 Congratulations! **WelcomeAboard** has been successfully installed on your project. 😄
 
-<br/><br/><br/>
+<br/><br/>
 
 ## How to use
 First, add `import WelcomeAboard` line on top of your ViewController's code to import the library.<br/>
